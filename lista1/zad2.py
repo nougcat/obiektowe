@@ -30,6 +30,7 @@ def dodawanie(ulamek1, ulamek2):
 def dodawanie_dwa(ulamek1, ulamek2):
     ulamek1[0] = ulamek1[0]*ulamek2[1] + ulamek2[0]*ulamek1[1]
     ulamek1[1] = ulamek1[1] * ulamek2[1]
+    return ulamek1
 
     
 def odejmowanie(ulamek1, ulamek2):
@@ -42,6 +43,7 @@ def odejmowanie(ulamek1, ulamek2):
 def odejmowanie_dwa(ulamek1, ulamek2):
     ulamek1[0] = ulamek1[0] * ulamek2[1] - ulamek2[0] * ulamek1[1]
     ulamek1[1] = ulamek1[1] * ulamek2[1]
+    return ulamek1
 
 
 def mnozenie(ulamek1, ulamek2):
@@ -54,6 +56,7 @@ def mnozenie(ulamek1, ulamek2):
 def mnozenie_dwa(ulamek1, ulamek2):
     ulamek1[1] = ulamek1[1] * ulamek2[1]
     ulamek1[0] = ulamek2[0] * ulamek2[0]
+    return ulamek1
 
 def dzielenie(ulamek1, ulamek2):
     licznik = ulamek2[0] * ulamek1[1]
@@ -67,6 +70,7 @@ def dzielenie_dwa(ulamek1, ulamek2):
     mianownik = ulamek2[1] * ulamek1[0]
     ulamek1[0] = licznik
     ulamek1[1] = mianownik
+    return ulamek1
 
 def show(ulamek):
     print(f'{ulamek[0]}/{ulamek[1]}')
@@ -91,15 +95,15 @@ show(new_ulamek)
 new_ulamek=dzielenie(ulamek1, ulamek2)
 show(new_ulamek)
 
-# dzialanie_bezposrednio_na_strukturach
+# dzialanie_bezposrednio_na_strukturach (na tyle na ile się da)
 
-dodawanie_dwa(ulamek1, ulamek2)
+ulamek1 = dodawanie_dwa(ulamek1, ulamek2)
 show(ulamek1)
 
-odejmowanie_dwa(ulamek1, ulamek2)
+ulamek1 = odejmowanie_dwa(ulamek1, ulamek2)
 show(ulamek1)
 
-mnozenie_dwa(ulamek1, ulamek2)
+ulamek1 = mnozenie_dwa(ulamek1, ulamek2)
 show(ulamek1)
 
 dzielenie_dwa(ulamek1, ulamek2)

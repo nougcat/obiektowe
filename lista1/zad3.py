@@ -3,26 +3,33 @@
 
 
 def dodaj(tab, indeks, val):
-    if tab == None:
-        tab = [[]]
-    while tab[0][0] < indeks:
+    if tab == None or tab == [] or tab == [[]]:
+        tab = [[indeks, val]]
+        return tab
+    while tab[0][0] > indeks:
         index = tab[0][0]
         tab = [[index-1, 0]] + tab
     
-
     if tab[0][0] < 0: 
         ix =-tab[0][0]
     else: 
         ix = tab[0][0]
+    
     current_max = tab[-1][0]
-    while tab[current_max][0] > indeks:
+    if current_max < 0: current_max=0
+    
+    while tab[current_max+ix][0] < indeks+ix:
         index = tab[0][0]
-        tab = [[index-1, 0]] + tab
-    print(ix + indeks)
+        tab = tab + [[current_max+ix+1, 0]]
+        current_max += 1
+
+    tab[indeks+ix][1] = val
+    return tab
 
 def show(tab):
     for x in tab:
         print(x[1], end=' ')
+    print("\n")
 
 
 def indeks(tab, index):
@@ -30,11 +37,19 @@ def indeks(tab, index):
         ix =-tab[0][0]
     else: 
         ix = tab[0][0]
-    try: print(tab[ix+index])
-    except IndexError: print("nie ma takiego indeksu")
+
+    if tab[0][0] > index: 
+        print("nie ma takiego indeksu")
+    elif tab[-1][0] < index: 
+        print("nie ma takiego indeksu")
+    else:
+        print(tab[ix+index])
+    
     
 
 
 tab = [[-3,-6],[-2,-5],[-1,-1],[0,0], [1,1], [2,2], [3,3]]
 
-indeks(tab, int(input()))
+tab = dodaj(tab, 6, 6)
+
+show(tab)
