@@ -1,3 +1,6 @@
+// indeks: 347818
+// Patryk Nogaś
+
 using System;
 using mojaLista;
 

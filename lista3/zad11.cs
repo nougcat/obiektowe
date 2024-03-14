@@ -1,3 +1,6 @@
+// indeks: 347818
+// Patryk Nogaś
+
 using System;
 
 
@@ -7,7 +10,6 @@ namespace mojaLista
     {
         private class Node
         {
-            // https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties
             public T Value { get; set; }
             public Node NextNode { get; set; }
             public Node PrevNode { get; set; }
