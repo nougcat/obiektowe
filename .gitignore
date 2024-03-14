@@ -1,7 +1,6 @@
 ## mine
 *.pdf
-
-
+*test*
 
 ## C++ gitignore
 
